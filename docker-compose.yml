@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  kong-database:
+    image: postgres:13
+    container_name: kong-database
+    restart: always
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_PASSWORD: kong
+      POSTGRES_DB: kong
+    ports:
+      - "5432:5432"
+    networks:
+      - kong-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kong"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+
+  kong-migrations:
+    image: kong/kong-gateway:3.8.1.0
+    container_name: kong-migrations
+    depends_on:
+      kong-database:
+        condition: service_healthy
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: kong-database
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+    command: "kong migrations bootstrap"
+    networks:
+      - kong-net
+  kong:
+    image: k:v1
+    container_name: kong-gateway
+    restart: always
+    depends_on:
+      kong-database:
+        condition: service_healthy
+      kong-migrations:
+        condition: service_completed_successfully
+    environment:
+      KONG_DATABASE: postgres
+      KONG_LOG_LEVEL: info
+      KONG_PG_HOST: kong-database
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_ADMIN_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_ERROR_LOG: /dev/stderr
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001, 0.0.0.0:8444 ssl
+    ports:
+      - "8000:8000"   # Kong Proxy
+      - "8443:8443"   # Kong Proxy SSL
+      - "8001:8001"   # Kong Admin API
+      - "8444:8444"   # Kong Admin API SSL
+    networks:
+      - kong-net
+
+networks:
+  kong-net:
+    driver: bridge
