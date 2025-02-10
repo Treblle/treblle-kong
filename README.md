@@ -5,7 +5,6 @@
 <div align="center">
 
 # Treblle
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="http://treblle.com/" target="_blank">Website</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="https://docs.treblle.com" target="_blank">Documentation</a>
@@ -15,11 +14,9 @@
   <hr />
 </div>
 
-API Intelligence Platform. 🚀
+## API Intelligence Platform
 
 Treblle is an federated API intelligence platform that helps organization understand their entire API Landscape in less than 60 seconds.
-
-## Products
 
 <div align="center">
   <br />
