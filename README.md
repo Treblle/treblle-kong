@@ -18,6 +18,7 @@
 
 Treblle is an federated API intelligence platform that helps organization understand their entire API Landscape in less than 60 seconds.
 
+<div align="center">
 <a href="https://treblle.com/product/api-observability" target="_blank">API Intelligence</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="https://treblle.com/product/api-documentation" target="_blank">API Documentation</a>
@@ -27,7 +28,8 @@ Treblle is an federated API intelligence platform that helps organization unders
 <a href="https://treblle.com/product/api-governance" target="_blank">API Governance</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="https://treblle.com/product/api-security" target="_blank">API Security</a>
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+</div>
+
 <div align="center">
   <br />
   <img src="https://github.com/user-attachments/assets/9b5f40ba-bec9-414b-af88-f1c1cc80781b"/>
