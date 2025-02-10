@@ -1,10 +1,57 @@
-# Treblle Kong Plugin
+<div align="center">
+<img src="https://github.com/user-attachments/assets/54f0c084-65bb-4431-b80d-cceab6c63dc3"/>
+</div>
 
-This plugin captures API request data and sends it to the Treblle API, enabling you to visualize and analyze your API traffic within Treblle. For each API request, the plugin asynchronously transmits relevant details to the Treblle API.
+<div align="center">
 
-To protect sensitive information, data masking can be enabled, ensuring that confidential data is not sent to Treblle.
+# Treblle
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="http://treblle.com/" target="_blank">Website</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://docs.treblle.com" target="_blank">Documentation</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://docs.treblle.com/en/integrations" target="_blank">Integrations</a>
 
-In case of a failure when sending data, the plugin automatically retries once, with a default retry interval of 5 seconds. Both the retry count and interval can be customized through the plugin’s configuration.
+  <hr />
+</div>
+
+API Intelligence Platform. 🚀
+
+Treblle is an federated API intelligence platform that helps organization understand their entire API Landscape in less than 60 seconds.
+
+## Products
+
+<div align="center">
+  <br />
+  <img src="https://github.com/user-attachments/assets/9b5f40ba-bec9-414b-af88-f1c1cc80781b"/>
+  <br />
+  <br />
+</div>
+
+- [API Intelligence](https://treblle.com/product/api-observability)
+- [API Documentation](https://treblle.com/product/api-documentation)
+- [API Analytics](https://treblle.com/product/api-analytics)
+- [API Governance](https://treblle.com/product/api-governance)
+- [API Security](https://treblle.com/product/api-security)
+- [API Integration Assistant](https://treblle.com/product/alfred)
+- [API Insights](https://treblle.com/product/api-insights)
+- [API Testing](https://treblle.com/product/aspen)
+
+
+# Kong Gateway plugin for Treblle
+
+The Kong API Gateway plugin for Treblle captures APIs requests in real-time and sends that that to Treblle. 
+
+With this single integration Treblle helps you:
+- Understand who your API consumers are, how they're using the API, and when
+- Stay secure and compliant at design and run-time
+- Automate API governance checks across security, performance and design
+- Debug APIs in real-time with access to request/response payloads
+- Generate and update your API documentation in OpenAPI Spec format
+- Build your API developer portal with an AI-powered integration assistant
+- Test your APIs in fast and easy way
+
+and much more.
 
 ## How to install
 
@@ -30,7 +77,7 @@ If you don't have a `kong.conf`, create one from the default using the following
 
 Start the Kong server.
 
-### 4. Enable the Treblle plugin Globally
+### 4. Enable the Treblle plugin globally
 
 - Create an API in Treblle
 - Get the SDK token and API ID from the Treblle dashboard.
