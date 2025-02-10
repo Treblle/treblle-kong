@@ -28,10 +28,6 @@ Treblle is an federated API intelligence platform that helps organization unders
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="https://treblle.com/product/api-security" target="_blank">API Security</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-<a href="https://treblle.com/product/alfred" target="_blank">AI Integration Assistant</a>
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-<a href="https://treblle.com/product/aspen" target="_blank">API Testing</a>
-
 <div align="center">
   <br />
   <img src="https://github.com/user-attachments/assets/9b5f40ba-bec9-414b-af88-f1c1cc80781b"/>
