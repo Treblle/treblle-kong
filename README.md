@@ -1,10 +1,55 @@
-# Treblle Kong Plugin
+<div align="center">
+<img src="https://github.com/user-attachments/assets/54f0c084-65bb-4431-b80d-cceab6c63dc3"/>
+</div>
 
-This plugin captures API request data and sends it to the Treblle API, enabling you to visualize and analyze your API traffic within Treblle. For each API request, the plugin asynchronously transmits relevant details to the Treblle API.
+<div align="center">
 
-To protect sensitive information, data masking can be enabled, ensuring that confidential data is not sent to Treblle.
+# Treblle
+<a href="http://treblle.com/" target="_blank">Website</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://docs.treblle.com" target="_blank">Documentation</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://docs.treblle.com/en/integrations" target="_blank">Integrations</a>
 
-In case of a failure when sending data, the plugin automatically retries once, with a default retry interval of 5 seconds. Both the retry count and interval can be customized through the plugin’s configuration.
+  <hr />
+</div>
+
+## API Intelligence Platform
+
+Treblle is an federated API intelligence platform that helps organization understand their entire API Landscape in less than 60 seconds.
+
+<div align="center">
+<a href="https://treblle.com/product/api-observability" target="_blank">API Intelligence</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://treblle.com/product/api-documentation" target="_blank">API Documentation</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://treblle.com/product/api-analytics" target="_blank">API Analytics</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://treblle.com/product/api-governance" target="_blank">API Governance</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://treblle.com/product/api-security" target="_blank">API Security</a>
+</div>
+
+<div align="center">
+  <br />
+  <img src="https://github.com/user-attachments/assets/9b5f40ba-bec9-414b-af88-f1c1cc80781b"/>
+  <br />
+</div>
+
+# Kong Gateway plugin for Treblle
+
+The Kong API Gateway plugin for Treblle captures APIs requests in real-time and sends that that to Treblle. 
+
+With this single integration Treblle helps you:
+- Understand who your API consumers are, how they're using the API, and when
+- Stay secure and compliant at design and run-time
+- Automate API governance checks across security, performance and design
+- Debug APIs in real-time with access to request/response payloads
+- Generate and update your API documentation in OpenAPI Spec format
+- Build your API developer portal with an AI-powered integration assistant
+- Test your APIs in fast and easy way
+
+and much more.
 
 ## How to install
 
@@ -30,7 +75,7 @@ If you don't have a `kong.conf`, create one from the default using the following
 
 Start the Kong server.
 
-### 4. Enable the Treblle plugin Globally
+### 4. Enable the Treblle plugin globally
 
 - Create an API in Treblle
 - Get the SDK token and API ID from the Treblle dashboard.
@@ -185,3 +230,17 @@ To update existing plugin with debug option:
     --data "config.mask_keywords[]=Authorization" \
     --data "config.mask_keywords[]=API_Key" 
     ```
+
+## Community
+
+First and foremost: **Star and watch this repository** to stay up-to-date.
+
+Also, follow our [Blog](https://blog.treblle.com), and on [Twitter](https://twitter.com/treblleapi).
+
+You can chat with the team and other members on [Discord](https://treblle.com/chat) and follow our tutorials and other video material at [YouTube](https://youtube.com/@treblle).
+
+[![Treblle Discord](https://img.shields.io/badge/Treblle%20Discord-Join%20our%20Discord-F3F5FC?labelColor=7289DA&style=for-the-badge&logo=discord&logoColor=F3F5FC&link=https://treblle.com/chat)](https://treblle.com/chat)
+
+[![Treblle YouTube](https://img.shields.io/badge/Treblle%20YouTube-Subscribe%20on%20YouTube-F3F5FC?labelColor=c4302b&style=for-the-badge&logo=YouTube&logoColor=F3F5FC&link=https://youtube.com/@treblle)](https://youtube.com/@treblle)
+
+[![Treblle on Twitter](https://img.shields.io/badge/Treblle%20on%20Twitter-Follow%20Us-F3F5FC?labelColor=1DA1F2&style=for-the-badge&logo=Twitter&logoColor=F3F5FC&link=https://twitter.com/treblleapi)](https://twitter.com/treblleapi)
