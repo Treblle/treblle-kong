@@ -12,7 +12,7 @@ local pluginName = package:match("^kong%-plugin%-(.+)$")  -- "treblle"
 supported_platforms = {"linux", "macosx"}
 source = {
   url = "git://github.com/Treblle/treblle-kong/",
-  tag = "1.0.0"
+  branch = "main"
 }
 
 description = {

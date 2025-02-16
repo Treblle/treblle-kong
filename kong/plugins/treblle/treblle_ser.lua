@@ -140,6 +140,7 @@ function _M.serialize(ngx, conf)
   local response_headers = res_get_headers()
   local request_size = 0
   local response_size = 0
+  local req_internal_id = treblle_ctx.req_internal_id
 
   req_body_transfer_encoding = getEncoding(request_headers)
   request_body_entity, request_size = getPayload(treblle_ctx.req_body, request_headers)
@@ -149,6 +150,7 @@ function _M.serialize(ngx, conf)
   local timezone = os.date("%Z") or "UTC"
 
   local payload = {
+    internal_id = req_internal_id,
     project_id = conf.project_id,
     version = 0.6,
     sdk = "Kong",
