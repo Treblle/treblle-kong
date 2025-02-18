@@ -11,6 +11,16 @@ local req_get_body_data = ngx.req.get_body_data
 local socket = require "socket"
 queue_hashes = {}
 
+-- Function to get the internal id of the service
+local function getInternalId()
+  local service = kong.router.get_service()
+
+  if service then
+    return service.id
+  end
+
+  return "unknown"
+end
 
 -- Handle the request before it is being proxied to the upstream service
 -- Extract request body and req protocol information
@@ -51,7 +61,8 @@ function TreblleLogHandler:access(conf)
     req_body = req_body,
     res_body = res_body,
     req_post_args = req_post_args,
-    req_protocol = formatted_version
+    req_protocol = formatted_version,
+    req_internal_id = getInternalId()
   }
 end
 

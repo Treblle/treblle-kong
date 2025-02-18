@@ -118,7 +118,7 @@ local function send_payload(event, conf)
 
   local start_send_time = socket.gettime() * 1000
 
-  while retry_count < max_retries do
+  while retry_count <= max_retries and not eventsSentSuccessfully do
     local start_post_req_time = socket.gettime() * 1000
     -- Send post request
     local resp, err = prepare_request(conf, event, debug)
@@ -303,8 +303,8 @@ end
 -- @param `hash_key` Hash key of the config application Id
 local function log(conf, message, hash_key)
   if conf.debug then
-    local message = require("cjson").encode(message)
-    ngx_log(ngx.DEBUG, "[treblle] Added Event to the queue. [message] - " .. message " for pid - " .. ngx.worker.pid())
+    local msg = require("cjson").encode(message)
+    ngx_log(ngx.DEBUG, "[treblle] Added Event to the queue. [message] - " .. msg .. " for pid - " .. ngx.worker.pid())
   end
   rec_event = rec_event + 1
   table.insert(queue_hashes[hash_key], message)
