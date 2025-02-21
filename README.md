@@ -51,7 +51,7 @@ With this single integration Treblle helps you:
 
 and much more.
 
-## How to install
+## How to install -Docker
 
 ### 1. Install the Treblle plugin
 
@@ -83,6 +83,61 @@ Start the Kong server.
 ```bash
 curl -i -X POST --url http://localhost:8001/plugins/ --data "name=treblle" --data "config.api_key=<SDK Token>" --data "config.project_id=<API_ID>";
 ```
+
+## How to install -MacOS/ Linux
+
+> If you are using Kong's [Kubernetes Ingress Controller](https://github.com/Kong/kubernetes-ingress-controller), the installation is slightly different. 
+The .rock file is a self contained package that can be installed locally or from a remote server.
+
+If the luarocks utility is installed in your system (this is likely the case if you used one of the official installation packages), you can install the 'rock' in your LuaRocks tree (a directory in which LuaRocks installs Lua modules).
+
+### 1. Install the Treblle plugin
+
+```bash
+luarocks install --server=http://luarocks.org/manifests/treblle kong-plugin-treblle
+```
+
+>- Make sure the `unzip` package is installed on your machine. 
+>  - For example when using the apt package manager, run `apt-get update; apt-get install curl vim unzip`.
+>- Make sure the `lua-zlib` lib dependencies (git, zlib1g-dev, gcc) have been installed on the system.
+>  - For example when using the apt package manager, run `apt-get update; apt-get install git zlib1g-dev gcc`.
+
+### 2. Update your loaded plugins list
+In your `kong.conf`, append `treblle` to the `plugins` field (or `custom_plugins` if old version of Kong). Make sure the field is not commented out.
+
+```yaml
+plugins = bundled,treblle         # Comma-separated list of plugins this node
+                                 # should load. By default, only plugins
+                                 # bundled in official distributions are
+                                 # loaded via the `bundled` keyword.
+```
+
+
+If you don't have a `kong.conf`, create one from the default using the following command: 
+`cp /etc/kong/kong.conf.default /etc/kong/kong.conf`
+
+### 3. Restart Kong
+
+After the luarock is installed, restart Kong before enabling the plugin
+
+```bash
+kong restart
+```
+
+### 4. Enable the Treblle plugin
+
+```bash
+curl -i -X POST --url http://localhost:8001/plugins/ --data "name=treblle" --data "config.application_id=YOUR_APPLICATION_ID";
+```
+
+### 5. Restart Kong again
+
+If you don't see any logs in Treblle, you may need to restart Kong again. 
+
+```bash
+kong restart
+```
+
 
 ## How to use
 
