@@ -4,6 +4,7 @@ local req_start_time = ngx.req.start_time
 local req_get_headers = ngx.req.get_headers
 local res_get_headers = ngx.resp and ngx.resp.get_headers or nil
 local cjson_safe = require "cjson.safe"
+local cjson = require "cjson"
 local _M = {}
 local ngx_log = ngx.log
 local ngx_log_ERR = ngx.ERR
@@ -80,6 +81,8 @@ local function getErrors(response_code, response_body)
     table.insert(errors, error)
   end
 
+  -- Ensure errors is serialized as a JSON array, not an object
+  setmetatable(errors, cjson.empty_array_mt)
   return errors
 end
 
